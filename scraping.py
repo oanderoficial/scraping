@@ -23,6 +23,15 @@ def head():
    head_ =soup.find('head')
    print(head_)
 
+def meta():
+   css_ = soup.find_all('meta')
+   print(css_)
+
+def script():
+   print ('')
+   s =soup.find_all('script')
+   print(s)
+
 while True:
    print ( """
 
@@ -38,8 +47,9 @@ while True:
    print("0 - Testing connection")
    print("1 - Scraping page.txt")
    print("2 - Scraping title")
-   print("3 - Scraping head")
-
+   print("3 - Scraping <head>")
+   print("4 - Scraping <meta>")
+   print("5 - Scraping <script>")
    menu = input("Digite uma opção >>>")
 
    if menu == '1':
@@ -50,6 +60,10 @@ while True:
       scraping()
    elif menu =='3':
       head()
+   elif menu =='4':
+      meta()   
+   elif menu =='5':
+      script()
 
    else:
       print ("Erro, tente novamente")
