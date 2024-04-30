@@ -32,6 +32,11 @@ def script():
    s =soup.find_all('script')
    print(s)
 
+def links():
+   print ('')
+   hf = soup.find_all('a')
+   print(hf)
+
 while True:
    print ( """
 
@@ -50,6 +55,7 @@ while True:
    print("3 - Scraping <head>")
    print("4 - Scraping <meta>")
    print("5 - Scraping <script>")
+   print("6 - Scraping <links>")
    menu = input("Digite uma opção >>>")
 
    if menu == '1':
@@ -64,6 +70,8 @@ while True:
       meta()   
    elif menu =='5':
       script()
+   elif menu == '6':
+      links()
 
    else:
       print ("Erro, tente novamente")
