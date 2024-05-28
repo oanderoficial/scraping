@@ -55,3 +55,54 @@ soup = BeautifulSoup(html_content, 'html.parser')
 <li>find_next_sibling(): Encontra a próxima tag irmã de uma tag específica.</li>
 <li>find_previous_sibling(): Encontra a tag irmã anterior de uma tag específica.</li>
 </ol>
+
+<h2> Criando a ferramenta </h2>
+<p> Fiz a importação das bibliotecas requests e BeautifulSoup para o scraping no meu site </p>
+
+```python
+import requests 
+from bs4 import BeautifulSoup 
+
+pagina = requests.get("https://oander.site")
+soup = BeautifulSoup(pagina.text, features="html.parser")
+
+```
+
+<p> Definindo algumas funções, procurando por tags </p>
+
+```python
+
+def scraping():
+  if pagina.status_code == 200:
+    print(pagina.content)
+  else:
+      print("HTTP error",pagina.status_code)
+
+def text():
+   print(soup)
+
+def title():
+   print('')
+   print(soup.title)
+   print('')
+
+def head():
+   print('')
+   head_ =soup.find('head')
+   print(head_)
+
+def meta():
+   css_ = soup.find_all('meta')
+   print(css_)
+
+def script():
+   print ('')
+   s =soup.find_all('script')
+   print(s)
+
+def links():
+   print ('')
+   hf = soup.find_all('a')
+   print(hf)
+
+```
